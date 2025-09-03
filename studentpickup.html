@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>School Pickup System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="pickup.css">
+  <script src="pickup.js" defer></script>
+</head>
+<body class="bg-gray-100 text-gray-900 kiosk-mode">
+
+  <!-- Main Container -->
+  <div id="main-container" class="container mx-auto px-4 py-8 max-w-3xl bg-white shadow rounded-lg mt-8 mb-8">
+    
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-blue-700">Student Pickup Registration</h1>
+      <p class="mt-2 text-sm text-gray-600">Please provide your details and take a selfie before collecting the student.</p>
+    </header>
+
+    <section id="consent-section" class="mb-8 p-4 border border-blue-200 bg-blue-50 rounded-md">
+      <h2 class="font-semibold text-blue-800">Privacy Notice</h2>
+      <p class="mt-2 text-sm">
+        By submitting this form, you agree that we may collect and store your information for safety purposes only.
+        Your photo will be used solely for identification during pickup and will not be shared beyond authorized personnel.
+      </p>
+      <label class="block mt-4 flex items-center space-x-2">
+        <input type="checkbox" id="consent-checkbox" required />
+        <span>I have read and understood the privacy notice.</span>
+      </label>
+      <button id="accept-consent-btn" class="mt-4 w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded disabled:opacity-50" disabled>
+        Accept & Continue
+      </button>
+    </section>
+
+    <form id="pickup-form" class="space-y-6 hidden">
+
+      <!-- Student Selection -->
+      <div>
+        <label for="student-name" class="block font-medium mb-1">Select Student *</label>
+        <input list="students-list" id="student-name" class="w-full p-2 border border-gray-300 rounded" placeholder="Search or enter Student ID..." required />
+        <datalist id="students-list">
+          <option value="John Doe (ID: 12345)">
+          <option value="Jane Smith (ID: 67890)">
+          <option value="Michael Brown (ID: 11223)">
+        </datalist>
+      </div>
+
+      <!-- Visitor Details -->
+      <fieldset class="space-y-4">
+        <legend class="font-semibold">Visitor Information</legend>
+        
+        <div>
+          <label for="visitor-name" class="block font-medium mb-1">Full Name *</label>
+          <input type="text" id="visitor-name" class="w-full p-2 border border-gray-300 rounded" required />
+        </div>
+
+        <div>
+          <label for="relationship" class="block font-medium mb-1">Relationship to Student *</label>
+          <select id="relationship" class="w-full p-2 border border-gray-300 rounded" required>
+            <option value="">-- Select --</option>
+            <option value="Parent">Parent</option>
+            <option value="Guardian">Guardian</option>
+            <option value="Relative">Relative</option>
+            <option value="Authorized Adult">Authorized Adult</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="phone-number" class="block font-medium mb-1">Phone Number *</label>
+          <input type="tel" id="phone-number" class="w-full p-2 border border-gray-300 rounded" pattern="[0-9]{10}" required />
+        </div>
+
+        <div>
+          <label for="gov-id" class="block font-medium mb-1">Government ID (Optional)</label>
+          <input type="text" id="gov-id" class="w-full p-2 border border-gray-300 rounded" />
+        </div>
+
+        <div>
+          <label for="vehicle-plate" class="block font-medium mb-1">Vehicle Plate Number (Optional)</label>
+          <input type="text" id="vehicle-plate" class="w-full p-2 border border-gray-300 rounded" />
+        </div>
+      </fieldset>
+
+      <!-- Camera Section -->
+      <section class="mt-6">
+        <h2 class="font-semibold mb-2">Take Selfie *</h2>
+        <video id="video" autoplay playsinline class="rounded shadow mb-2 w-full"></video>
+        <canvas id="canvas" class="hidden rounded shadow mb-2 w-full"></canvas>
+        <div class="flex justify-between gap-2">
+          <button type="button" id="capture-btn" class="py-2 px-4 bg-green-600 hover:bg-green-700 text-white rounded">Capture Photo</button>
+          <button type="button" id="retake-btn" class="py-2 px-4 bg-yellow-600 hover:bg-yellow-700 text-white rounded hidden">Retake</button>
+        </div>
+        <small class="block text-gray-600 mt-2">This image will be used for verification purposes only.</small>
+      </section>
+
+      <!-- Signature Canvas -->
+      <section class="mt-6">
+        <h2 class="font-semibold mb-2">Electronic Signature *</h2>
+        <canvas id="signature-pad" width="400" height="150" class="border border-gray-300 rounded cursor-crosshair w-full"></canvas>
+        <button type="button" id="clear-signature-btn" class="mt-2 py-1 px-3 text-xs bg-red-500 hover:bg-red-600 text-white rounded">Clear Signature</button>
+      </section>
+
+      <!-- Submit Button -->
+      <button type="submit" id="submit-btn" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded shadow">
+        Submit Pickup Record
+      </button>
+    </form>
+
+    <!-- Success Message -->
+    <div id="success-message" class="hidden p-4 border border-green-200 bg-green-50 rounded-md text-center">
+      <i data-feather="check-circle" class="text-green-500 mr-2"></i>
+      <strong>Your pickup has been recorded successfully!</strong>
+      <br/>
+      <span id="record-id-display" class="text-sm mt-2 block"></span>
+      <button onclick="window.print()" class="mt-4 py-2 px-4 bg-blue-600 text-white rounded">Print Receipt</button>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-message" class="hidden p-4 border border-red-200 bg-red-50 rounded-md text-center text-red-600">
+      <i data-feather="alert-triangle" class="mr-2"></i>
+      <span id="error-text"></span>
+    </div>
+  </div>
+</body>
+</html>
