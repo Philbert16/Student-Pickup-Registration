@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing - School Pickup System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .kiosk-mode {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+    }
+    .pricing-card {
+      transition: transform 0.3s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-5px);
+    }
+    .popular-badge {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 kiosk-mode">
+  <div class="container mx-auto px-4 py-8 max-w-6xl">
+    <header class="text-center mb-12">
+      <h1 class="text-3xl font-bold text-blue-700">Simple, Transparent Pricing</h1>
+      <p class="mt-2 text-gray-600">Choose the plan that works best for your school</p>
+      <div class="mt-6">
+        <a href="index.html" class="text-blue-600 hover:underline mr-4">← Back to Home</a>
+        <a href="login.html" class="text-blue-600 hover:underline mr-4">Login</a>
+        <a href="signup.html" class="text-blue-600 hover:underline">Sign Up</a>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- Free Trial Plan -->
+      <div class="pricing-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Free Trial</h2>
+        <div class="mb-4">
+          <span class="text-4xl font-bold">₵0</span>
+          <span class="text-gray-600">/16 days</span>
+        </div>
+        <p class="text-gray-600 mb-6">Try our system risk-free with full access to all features</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Full feature access</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Unlimited pickups</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Photo verification</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Email support</span>
+          </li>
+        </ul>
+        <button class="w-full py-3 bg-gray-600 hover:bg-gray-700 text-white font-semibold rounded shadow">
+          <a href="signup.html" class="block w-full h-full flex items-center justify-center">Start Free Trial</a>
+        </button>
+      </div>
+
+      <!-- Monthly Plan -->
+      <div class="pricing-card bg-white rounded-xl shadow-lg p-6 border-2 border-blue-500 relative">
+        <div class="popular-badge text-white text-xs font-bold px-4 py-1 rounded-full absolute -top-3 right-4">
+          MOST POPULAR
+        </div>
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Monthly Plan</h2>
+        <div class="mb-4">
+          <span class="text-4xl font-bold">₵200</span>
+          <span class="text-gray-600">/month</span>
+        </div>
+        <p class="text-gray-600 mb-6">Perfect for schools with ongoing needs</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Full feature access</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Unlimited pickups</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Photo verification</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Priority support</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Monthly reports</span>
+          </li>
+        </ul>
+        <button class="w-full py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded shadow">
+          <a href="payment.html" class="block w-full h-full flex items-center justify-center">Get Started</a>
+        </button>
+      </div>
+
+      <!-- Yearly Plan -->
+      <div class="pricing-card bg-white rounded-xl shadow-lg p-6 border border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">Yearly Plan</h2>
+        <div class="mb-4">
+          <span class="text-4xl font-bold">₵2000</span>
+          <span class="text-gray-600">/year</span>
+          <div class="text-green-600 font-semibold mt-1">Save ₵400</div>
+        </div>
+        <p class="text-gray-600 mb-6">Best value for long-term commitment</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>All monthly features</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>2 months free</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Dedicated account manager</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>Custom integrations</span>
+          </li>
+          <li class="flex items-center">
+            <i data-feather="check-circle" class="text-green-500 mr-2 w-5 h-5"></i>
+            <span>24/7 premium support</span>
+          </li>
+        </ul>
+        <button class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded shadow">
+          <a href="payment-yearly.html" class="block w-full h-full flex items-center justify-center">Get Started</a>
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-xl shadow-lg p-8 mb-12">
+      <h2 class="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Can I switch plans anytime?</h3>
+          <p class="text-gray-600">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">What happens after the free trial?</h3>
+          <p class="text-gray-600">You'll be automatically switched to the free plan unless you choose to upgrade to a paid plan.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Is there a setup fee?</h3>
+          <p class="text-gray-600">No, there are no setup fees for any of our plans.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">How do I cancel my subscription?</h3>
+          <p class="text-gray-600">You can cancel anytime from your account settings. No cancellation fees.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <p class="text-gray-600 mb-4">Need a custom plan for a large institution?</p>
+      <a href="#" class="text-blue-600 hover:underline font-semibold">Contact our sales team</a>
+    </div>
+  </div>
+
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>

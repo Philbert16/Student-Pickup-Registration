@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="menu">
+      <button class="menu-toggle" id="menu-toggle">
+        <span class="icon material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z"/></svg></span>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+      <ul  class="menu-items">
+        <li class="item">
+            <button title="Favourite">
+                <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="m480-120-58-52q-101-91-167-157T150-447.5Q111-500 95.5-544T80-634q0-94 63-157t157-63q52 0 99 22t81 62q34-40 81-62t99-22q94 0 157 63t63 157q0 46-15.5 90T810-447.5Q771-395 705-329T538-172l-58 52Zm0-108q96-86 158-147.5t98-107q36-45.5 50-81t14-70.5q0-60-40-100t-100-40q-47 0-87 26.5T518-680h-76q-15-41-55-67.5T300-774q-60 0-100 40t-40 100q0 35 14 70.5t50 81q36 45.5 98 107T480-228Zm0-273Z"/></svg></span>
+            </button>
+        </li>
+        <li class="item">
+            <button title="Bookmarks">
+                <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M200-120v-640q0-33 23.5-56.5T280-840h400q33 0 56.5 23.5T760-760v640L480-240 200-120Zm80-122 200-86 200 86v-518H280v518Zm0-518h400-400Z"/></svg></span>
+            </button>
+        </li>
+        <li class="item">
+            <button title="Settings">
+                <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M680-80q-50 0-85-35t-35-85q0-6 3-28L282-392q-16 15-37 23.5t-45 8.5q-50 0-85-35t-35-85q0-50 35-85t85-35q24 0 45 8.5t37 23.5l281-164q-2-7-2.5-13.5T560-760q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-24 0-45-8.5T598-672L317-508q2 7 2.5 13.5t.5 14.5q0 8-.5 14.5T317-452l281 164q16-15 37-23.5t45-8.5q50 0 85 35t35 85q0 50-35 85t-85 35Zm0-80q17 0 28.5-11.5T720-200q0-17-11.5-28.5T680-240q-17 0-28.5 11.5T640-200q0 17 11.5 28.5T680-160ZM200-440q17 0 28.5-11.5T240-480q0-17-11.5-28.5T200-520q-17 0-28.5 11.5T160-480q0 17 11.5 28.5T200-440Zm480-280q17 0 28.5-11.5T720-760q0-17-11.5-28.5T680-800q-17 0-28.5 11.5T640-760q0 17 11.5 28.5T680-720Zm0 520ZM200-480Zm480-280Z"/></svg></span>
+            </button>
+        </li>
+        <li class="item">
+            <button title="Message">
+                <span class="material-icons"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#434343"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg></span>
+            </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+    :root{
+        --btn-size: 56px;
+        --extra-space: 24px;
+        --transition-speed: 0.5s;
+        --primary-color: #4361ee;
+        --secondary-color: #3a0ca3;
+        --accent-color: #f72585;
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+        --shadow-color: 0 4px 6px rgba(0,0,0,0.1);
+        --shadow-hover-color: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+    }
+
+    .menu{
+        position: relative;
+        width: var(--btn-size);
+        height: var(--btn-size);
+    }
+
+    .menu-toggle{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--btn-size);
+        height: var(--btn-size);
+        border-radius: 50%;
+        border: none;
+        background: var(--primary-color);
+        color: var(--light-color);
+        box-shadow: var(--shadow-color);
+        cursor: pointer;
+        transition: box-shadow var(--transition-speed), transform var(--transition-speed), background var(--transition-speed);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        z-index: 10;
+        box-shadow: var(--shadow-color);
+        transition: all 0.5s ease;
+    }
+    .menu-toggle:hover{
+        box-shadow: var(--shadow-hover-color);
+        background: var(--secondary-color);
+        transform: scale(1.1);
+    }
+
+    .menu-items{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: var(--btn-size);
+        height: var(--btn-size);
+        border-radius: 50%;
+        background: var(--light-color);
+        box-shadow: var(--shadow-color);
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: width var(--transition-speed), height var(--transition-speed), box-shadow var(--transition-speed);
+        overflow: hidden;    /* Hide overflow when collapsed */
+    }
+
+    .items{
+        position: absolute;
+        width: var(--btn-size);
+        height: var(--btn-size);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: transform var(--transition-speed), background var(--transition-speed);
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 0;
+        pointer-events: none; /* Prevent interaction when hidden */
+    }
+
+    .menu.open{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Position each item in a circular layout */
+    .menu.open .item:nth-child(1){
+        transform: translate(0, -100px);
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0s;
+    }
+    .menu.open .item:nth-child(2){
+        transform: translate(70px, -70px);
+        background: linear-gradient(135deg, #f72585 0%, #720026 100%);
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0.1s;
+    }
+    .menu.open .item:nth-child(3){
+        transform: translate(100px, 0);
+        background: linear-gradient(135deg, #3a0ca3 0%, #4361ee 100%);
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0.2s;
+    }
+    .menu.open .item:nth-child(4){
+        transform: translate(70px, 70px);
+        background: linear-gradient(135deg, #720026 0%, #f72585 100%);
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0.3s;
+    }
+    .menu.open .item:nth-child(5){
+        transform: translate(0, 100px);
+        background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        opacity: 1;
+        pointer-events: auto;
+        transition-delay: 0.4s;
+    }
+    .menu-toggle .icon{
+        transition: transform var(--transition-speed);
+    }
+    .menu.open .menu-toggle .icon{
+        background: var(--accent-color);
+    }
+    .item button{
+        border: none;
+        background: none;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--light-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: all 0.5s ease;
+    }
+    .material-icons{
+        font-size: 24px;
+    }
+    .sr-only{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden; /* Toggole visibility */
+        clip: rect(0,0,0,0); 
+        white-space: nowrap;
+        border-width: 0;
+    }
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.querySelector('.menu');
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            menu.classList.toggle('open');
+        });
+        document.addEventListener('click', () => {
+            menu.classList.remove('open');
+        })
+        document.querySelectorAll('.item button').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.stopPropagation();
+                alert(e.currentTarget.title + ' clicked!');
+                menu.classList.remove('open');
+            })
+        })
+    })
+  </script>
+
+</body>
+</html>

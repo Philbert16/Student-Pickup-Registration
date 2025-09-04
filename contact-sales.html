@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Sales - School Pickup System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .kiosk-mode {
+      user-select: none;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+    }
+    .contact-card {
+      transition: transform 0.3s ease;
+    }
+    .contact-card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900 kiosk-mode">
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <header class="text-center mb-12">
+      <h1 class="text-3xl font-bold text-blue-700">Contact Our Sales Team</h1>
+      <p class="mt-2 text-gray-600">Get in touch with our experts to discuss custom solutions for your institution</p>
+      <div class="mt-6">
+        <a href="index.html" class="text-blue-600 hover:underline mr-4">← Back to Home</a>
+        <a href="pricing.html" class="text-blue-600 hover:underline">View Pricing Plans</a>
+      </div>
+    </header>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Contact Form -->
+      <div class="bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Send us a message</h2>
+        <form id="contact-form" class="space-y-6">
+          <div>
+            <label for="name" class="block font-medium mb-1">Full Name *</label>
+            <input type="text" id="name" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" required />
+          </div>
+
+          <div>
+            <label for="email" class="block font-medium mb-1">Work Email *</label>
+            <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" required />
+          </div>
+
+          <div>
+            <label for="institution" class="block font-medium mb-1">Institution Name *</label>
+            <input type="text" id="institution" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" required />
+          </div>
+
+          <div>
+            <label for="role" class="block font-medium mb-1">Your Role *</label>
+            <select id="role" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" required>
+              <option value="">-- Select Role --</option>
+              <option value="administrator">School Administrator</option>
+              <option value="principal">Principal</option>
+              <option value="director">Director/Board Member</option>
+              <option value="it-manager">IT Manager</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="message" class="block font-medium mb-1">How can we help you? *</label>
+            <textarea id="message" rows="5" class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Tell us about your requirements, number of students, specific needs, etc." required></textarea>
+          </div>
+
+          <div class="flex items-center">
+            <input type="checkbox" id="newsletter" class="mr-2" />
+            <label for="newsletter" class="text-sm">Subscribe to our newsletter for product updates</label>
+          </div>
+
+          <button type="submit" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded shadow transition duration-300">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+      <!-- Contact Information -->
+      <div>
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8 contact-card">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">Talk to an Expert</h2>
+          
+          <div class="space-y-6">
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i data-feather="phone" class="w-6 h-6 text-blue-600"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Call Us</h3>
+                <p class="text-gray-600 mt-1">+233 302 123 456</p>
+                <p class="text-gray-600 text-sm">Mon-Fri, 9AM-5PM GMT</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i data-feather="mail" class="w-6 h-6 text-blue-600"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Email Us</h3>
+                <p class="text-gray-600 mt-1">sales@schoolpickup.com</p>
+                <p class="text-gray-600 text-sm">We typically respond within 24 hours</p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <div class="bg-blue-100 p-3 rounded-full mr-4">
+                <i data-feather="map-pin" class="w-6 h-6 text-blue-600"></i>
+              </div>
+              <div>
+                <h3 class="font-semibold text-lg">Visit Our Office</h3>
+                <p class="text-gray-600 mt-1">123 Education Avenue</p>
+                <p class="text-gray-600">Accra, Ghana</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl shadow-lg p-8 text-white">
+          <h2 class="text-2xl font-bold mb-4">Why Choose Custom Solutions?</h2>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="w-5 h-5 mr-2 mt-1 flex-shrink-0"></i>
+              <span>Tailored features for large institutions</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="w-5 h-5 mr-2 mt-1 flex-shrink-0"></i>
+              <span>Dedicated account manager</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="w-5 h-5 mr-2 mt-1 flex-shrink-0"></i>
+              <span>Priority support and training</span>
+            </li>
+            <li class="flex items-start">
+              <i data-feather="check-circle" class="w-5 h-5 mr-2 mt-1 flex-shrink-0"></i>
+              <span>Special volume discounts</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="bg-white rounded-xl shadow-lg p-8 mt-12">
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-8">Frequently Asked Questions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-semibold text-lg mb-2">What information should I prepare for a sales call?</h3>
+          <p class="text-gray-600">Have details about your institution size, number of students, current pickup process challenges, and specific requirements you'd like addressed.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Do you offer discounts for large institutions?</h3>
+          <p class="text-gray-600">Yes, we provide special pricing for institutions with over 500 students. Contact our team for a customized quote.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">How long does implementation take?</h3>
+          <p class="text-gray-600">Implementation typically takes 2-4 weeks depending on the size of your institution and customization requirements.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Can I schedule a demo of the system?</h3>
+          <p class="text-gray-600">Absolutely! Our sales team will be happy to arrange a personalized demo to show you how our system works.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rounded Toggle Menu -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <div class="relative">
+        <!-- Main Toggle Button -->
+        <button id="toggle-menu-btn" class="bg-blue-600 text-white rounded-full p-4 shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300">
+          <i data-feather="message-circle" class="w-6 h-6"></i>
+        </button>
+        
+        <!-- Menu Items (Hidden by default) -->
+        <div id="contact-menu" class="absolute bottom-16 right-0 bg-white rounded-xl shadow-lg p-2 space-y-2 w-48 hidden opacity-0 transform translate-y-2 transition-all duration-300">
+          <!-- Email Option -->
+          <a href="mailto:philinfo16@gmail.com" class="flex items-center p-3 hover:bg-gray-100 rounded-lg transition-colors duration-200">
+            <div class="bg-blue-100 p-2 rounded-full mr-3">
+              <i data-feather="mail" class="w-5 h-5 text-blue-600"></i>
+            </div>
+            <span class="text-gray-700 font-medium">Email Us</span>
+          </a>
+          
+          <!-- WhatsApp Option -->
+          <a href="https://wa.me/+233595288293" target="_blank" class="flex items-center p-3 hover:bg-gray-100 rounded-lg transition-colors duration-200">
+            <div class="bg-green-100 p-2 rounded-full mr-3">
+              <i data-feather="message-square" class="w-5 h-5 text-green-600"></i>
+            </div>
+            <span class="text-gray-700 font-medium">WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    feather.replace();
+    
+    // Toggle menu functionality
+    const toggleBtn = document.getElementById('toggle-menu-btn');
+    const contactMenu = document.getElementById('contact-menu');
+    
+    toggleBtn.addEventListener('click', function() {
+      if (contactMenu.classList.contains('hidden')) {
+        contactMenu.classList.remove('hidden');
+        setTimeout(() => {
+          contactMenu.classList.remove('opacity-0', 'translate-y-2');
+        }, 10);
+      } else {
+        contactMenu.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => {
+          contactMenu.classList.add('hidden');
+        }, 300);
+      }
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!toggleBtn.contains(event.target) && !contactMenu.contains(event.target)) {
+        if (!contactMenu.classList.contains('hidden')) {
+          contactMenu.classList.add('opacity-0', 'translate-y-2');
+          setTimeout(() => {
+            contactMenu.classList.add('hidden');
+          }, 300);
+        }
+      }
+    });
+    
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Form validation
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const institution = document.getElementById('institution').value;
+      const role = document.getElementById('role').value;
+      const message = document.getElementById('message').value;
+      
+      if (!name || !email || !institution || !role || !message) {
+        alert('Please fill in all required fields.');
+        return;
+      }
+      
+      // In a real application, you would send this data to a server
+      alert('Thank you for contacting our sales team! We will get back to you within 24 hours.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
