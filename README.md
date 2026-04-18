@@ -12,7 +12,13 @@ The **Student Pickup Registration System** is a comprehensive web-based applicat
 
 Built with modern web technologies, this kiosk-mode application provides an intuitive, touch-friendly interface suitable for deployment on tablets or dedicated kiosks in school environments. The system prioritizes user privacy, data security, and ease of use to enhance safety protocols while maintaining efficiency.
 
-## 🎯 Purpose & Use Cases
+## � Live Demo
+
+Experience the Student Pickup Registration System live: [https://philbert16.github.io/Student-Pickup-Registration/](https://philbert16.github.io/Student-Pickup-Registration/)
+
+_Note: Collaborators can access this deployed version to test features, review UI/UX, and validate functionality without setting up a local environment._
+
+## �🎯 Purpose & Use Cases
 
 This application serves educational institutions by:
 
